@@ -19,24 +19,24 @@ body {
 
 @font-face {
   font-family: 'MerriweatherSans_Regular';
-  src: url('/circuitikz-generator.github.io/fonts/MerriweatherSans-Regular.woff2') format('woff2'),
-       url('/circuitikz-generator.github.io/fonts/MerriweatherSans-Regular.woff') format('woff');
+  src: url('/fonts/MerriweatherSans-Regular.woff2') format('woff2'),
+       url('/fonts/MerriweatherSans-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
  	font-family: 'PoetsenOne_Regular';
-  	src:url('/circuitikz-generator.github.io/fonts/PoetsenOne-Regular.woff2') format('woff2'),
-       	url('/circuitikz-generator.github.io/fonts/PoetsenOne-Regular.woff') format('woff');
+  	src:url('/fonts/PoetsenOne-Regular.woff2') format('woff2'),
+       	url('/fonts/PoetsenOne-Regular.woff') format('woff');
   	font-weight: normal;
   	font-style: normal;
 }
 
 @font-face {
   font-family: 'Mada_Regular';
-  src: url('/circuitikz-generator.github.io/fonts/Mada-Regular.woff2') format('woff2'),
-       url('/circuitikz-generator.github.io/fonts/Mada-Regular.woff') format('woff');
+  src: url('/fonts/Mada-Regular.woff2') format('woff2'),
+       url('/fonts/Mada-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
