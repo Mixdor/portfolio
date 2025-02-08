@@ -1,0 +1,277 @@
+---
+import ProjectCard from '../components/ProjectCard.astro';
+
+import circle from '../assets/circle.svg';
+import logo_terminal_unlock from '../assets/logo_terminal_unlock.svg';
+import logo_skin_cs2 from '../assets/logo_skin_cs2.svg';
+import logo_devknow from '../assets/logo_devknow.svg';
+import logo_sensehub from '../assets/logo_sensehub.svg';
+import logo_circuitikz_gen from '../assets/logo_circuitikz_gen.svg';
+
+import terminal1 from '../assets/screenshot/terminal1.png'
+import terminal2 from '../assets/screenshot/terminal2.png'
+import terminal3 from '../assets/screenshot/terminal3.png'
+import terminal4 from '../assets/screenshot/terminal4.png'
+
+import counter1 from '../assets/screenshot/counter1.png'
+import counter2 from '../assets/screenshot/counter2.png'
+import counter3 from '../assets/screenshot/counter3.png'
+import counter4 from '../assets/screenshot/counter4.png'
+
+import devknow1 from '../assets/screenshot/devknow1.png'
+import devknow2 from '../assets/screenshot/devknow2.png'
+import devknow3 from '../assets/screenshot/devknow3.png'
+import devknow4 from '../assets/screenshot/devknow4.png'
+
+import sense1 from '../assets/screenshot/sense1.jpg'
+import sense2 from '../assets/screenshot/sense2.jpg'
+import sense3 from '../assets/screenshot/sense3.png'
+import sense4 from '../assets/screenshot/sense4.png'
+
+import circuitikz1 from '../assets/screenshot/circuitikz1.png'
+import circuitikz2 from '../assets/screenshot/circuitikz2.png'
+import circuitikz3 from '../assets/screenshot/circuitikz3.png'
+import circuitikz4 from '../assets/screenshot/circuitikz4.png'
+
+---
+
+<h2>Experience</h2>
+
+<div id="experience_container">
+	
+	<p class="date">2022 - Present</p>
+	
+	<div class="point_container">
+		<img src={circle.src} alt="" width="12px" height="12px">
+	</div>
+
+	<p class="experience_title">Android Developer - <span style="color: var(--primary_color);">SilentBit Studios</span></p>	
+
+	<!-- ------- -->
+
+	<div/>
+	
+	<div class="liine_container">
+		<div class="line_v"/>
+	</div>
+	
+	<div>
+		<h3 class="undertitle">Remote</h3>
+		<p class="normal_text">At SilentBit Studios, I developed and published several applications on the Google Play Store under the SilentBit Studios brand, leveraging Kotlin as my primary programming language. My role encompassed the entire software development lifecycle—from initial concept and design to development, testing, deployment, and ongoing maintenance. I collaborated with various stakeholders to ensure that our applications met high-quality standards and delivered exceptional user experiences. By consistently meeting deadlines and refining my technical expertise through adherence to industry best practices, I demonstrated strong self-management, effective communication, and a commitment to continuous improvement in every project.</p>
+
+		<ProjectCard 
+			baseid="terminal_unlock"
+			title="Terminal Unlock"
+			img={logo_terminal_unlock.src} 
+			descrip="Fallout Terminal Unlock is a mobile app designed to streamline the terminal hacking puzzles in the Fallout series by providing real-time solutions based on selected difficulty levels and featuring customizable themes to enhance user experience. In addition to simplifying the challenge of trial-and-error hacking, the app includes detailed in-game maps that pinpoint terminal locations, allowing players to navigate the expansive Fallout universe more efficiently."
+			n_downloads="+15K"
+			updated="Dec 28, 2024"
+			released="Jun 16, 2023"
+			play_store="https://play.google.com/store/apps/details?id=com.silentbit.terminalunlock"
+			github=""
+			source_forge=""
+			web=""
+			technologies={["Kotlin", "Groovy", "Glide", "XML", "UI Advanced"]}
+			screenshots={[terminal1.src, terminal2.src, terminal3.src, terminal4.src]}
+			is_landscape={false}
+		/>
+
+		<ProjectCard
+			baseid="skin_viewer"
+			title="SkinViewer for CS2"
+			img={logo_skin_cs2.src} 
+			descrip="SkinViewer for CS2 is a comprehensive mobile application designed to empower Counter-Strike players and skin collectors with all the detailed information they need about CS2 skins. The app offers an intuitive interface to explore a wide range of weapon skins—complete with stunning visuals and extensive details—while allowing users to filter options by type, rarity, price, and more. With real-time data integration, users can effortlessly check current Steam market prices as well as prices from third-party sources, ensuring they stay informed about market trends."
+			n_downloads="+150"
+			updated="Dec 8, 2024"
+			released="Dec 8, 2024"
+			play_store="https://play.google.com/store/apps/details?id=com.silentbit.skinviewerforcs2"
+			github=""
+			source_forge=""
+			web=""
+			technologies={["Kotlin", "XML", "Json", "Gson", "Retrofit", "DaggerHilt", "Flow", "Corrutine", "Paging"]}
+			screenshots={[counter1.src, counter2.src, counter3.src, counter4.src]}
+			is_landscape={false}
+		/>
+
+		<ProjectCard
+			baseid="devknow"
+			title="DevKnow"
+			img={logo_devknow.src} 
+			descrip="DevKnow is your essential companion for mastering programming, offering a comprehensive library of documentation, guides, and resources across various programming topics, languages, and tools—all designed to enhance your coding skills and productivity. With its intuitive interface and selective download system, you can easily access the latest updates on your favorite technologies, even offline, whether you're refining your web development expertise or mastering the Linux console with our detailed Bash guide."
+			n_downloads="+50"
+			updated="Apr 28, 2024"
+			released="Apr 28, 2024"
+			play_store="https://play.google.com/store/apps/details?id=com.silentbit.devknow"
+			github=""
+			source_forge=""
+			web=""
+			technologies={["Kotlin", "MVVM", "ViewModel", "Room", "SQLite", "DaggerHilt", "XML", "Material UI", "Firebase"]}
+			screenshots={[devknow1.src, devknow2.src, devknow3.src, devknow4.src]}
+			is_landscape={false}
+		/>
+
+	</div>
+	
+	<!-- ------- -->
+
+	<p class="date">2018 - 2024</p>
+	
+	<div class="point_container">
+		<img src={circle.src} alt="" width="12px" height="12px">
+	</div>
+
+	<p class="experience_title">Student - <span style="color: var(--primary_color);">Corporación Universitaria Republicana</span></p>	
+
+	<!-- ------- -->
+
+	<div/>
+	
+	<div class="liine_container">
+		<div class="line_v"/>
+	</div>
+
+	<div>
+		<h3 class="undertitle">On-site</h3>
+
+		<ProjectCard
+			baseid={"sensehub"}
+			title={"SenseHub Mobile"}
+			img={logo_sensehub.src} 
+			descrip="SenseHub Mobile is an innovative Android application designed to simplify the deployment and management of customized IoT devices. Developed as part of my Systems Engineering thesis project, the app features a user-friendly interface that streamlines the configuration, monitoring, and control of diverse IoT hardware, demonstrating my ability to integrate complex systems with mobile technology to create robust, scalable solutions."
+			n_downloads=""
+			updated=""
+			released=""
+			play_store=""
+			github="https://github.com/Mixdor/SenseHub-Mobile"
+			source_forge=""
+			web=""
+			technologies={["Kotlin", "C++", "XML", "Firebase", "IoT", "MVVM", "ESP32"]}
+			screenshots={[sense1.src, sense2.src, sense3.src, sense4.src]}
+			is_landscape={false}
+		/>
+
+	</div>
+
+	<!-- ------- -->
+
+	<p class="date"></p>
+	
+	<div class="point_container">
+		<img src={circle.src} alt="" width="12px" height="12px">
+	</div>
+
+	<p class="experience_title">Freelance</p>
+
+	<!-- ------- -->
+
+	<div/>
+	
+	<div class="liine_container">
+		<div id="last_line_v" class="line_v"/>
+	</div>
+
+	<div>
+
+		<ProjectCard
+			baseid="circuitikz"
+			title="CircuiTikZ Generator"
+			img={logo_circuitikz_gen.src} 
+			descrip="CircuiTikZ Generator is a powerful tool that streamlines the creation of electronic circuit diagrams for LaTeX documents. Its intuitive graphical interface allows you to design complex circuits quickly and effortlessly, while the built-in LaTeX code generator automatically translates your visual designs into clean, circuitikz-compatible code. Whether you're an engineer, educator, or student, this software provides a seamless bridge between visual circuit design and professional-quality technical documentation."
+			n_downloads="+1.1K"
+			updated="Aug 21, 2024"
+			released=""
+			play_store=""
+			github="https://github.com/Mixdor/CircuiTikZ-Generator"
+			source_forge="https://sourceforge.net/projects/circuitikz-generator/"
+			web="https://mixdor.github.io/circuitikz-generator.github.io/"
+			technologies={["Python", "Qt", "PyQt6", "Latex", "cx_Freeze"]}
+			screenshots={[circuitikz1.src, circuitikz2.src, circuitikz3.src, circuitikz4.src]}
+			is_landscape={true}
+		/>
+
+	</div>
+
+</div>
+
+<style>
+
+	#experience_container{
+		display: grid;
+		gap: 0px 15px;
+		grid-template-columns: 1.25fr 0.2fr 5fr;
+	}
+
+	#last_line_v{
+		height: 90%;
+	}
+
+	.normal_text{
+		color: var(--text_color);
+		font-family: Mada_Regular;
+		font-size: 1rem;
+	}
+
+	.experience_title{
+		color: var(--text_color);
+		font-family: Mada_Regular;
+		font-size: 1.25rem;
+		margin: 0;
+		align-content: center;
+		text-align: start;
+	}
+
+	.date{
+		display: inline-block;
+		color: var(--text_color);
+		font-family: Mada_Regular;
+		font-size: 1.25rem;
+		margin: 0;
+		align-content: center;
+		text-align: end;
+	}
+
+	.line_v{
+		width: 2px;
+		height: 100%;
+	  	background-color: var(--complementary_color);
+	  	margin-left: 5px;
+	  	margin-right: 5px;
+	  	margin-top: 0;
+	  	margin-bottom: 0;
+	}
+
+	.point_container{
+		align-content: center;
+	}
+
+	.liine_container{
+		align-content:start;
+	}
+
+	@media (max-width: 768px) {
+
+		#experience_container{
+			grid-template-columns: 0fr 0fr 1fr;
+			gap: 0;
+		}
+		
+		.date{
+			display: inline-block;
+			white-space: nowrap;
+			overflow: hidden;
+			max-width: 0;
+		}
+
+		.point_container{
+			overflow: hidden;
+			max-width: 0;
+		}
+
+		.liine_container{
+			overflow: hidden;
+			max-width: 0;
+		}
+
+	}
+		
+</style>

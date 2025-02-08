@@ -1,0 +1,49 @@
+---
+interface Props {
+	text: String;
+	img: String;
+}
+
+const {text, img} = Astro.props;
+---
+
+<div class="chip">
+	<img src={img} alt="" onerror="this.style.display='none';">
+	<p class="text">{text}</p>
+</div>
+
+<style>
+	.chip{
+		display: flex;
+		align-items: center;
+		background-color: var(--secondary_color);
+		border: 1px solid var(--primary_color);
+		border-radius: 5px;
+		padding-top: 2px;
+		padding-bottom: 2px;
+		padding-left: 10px;
+		padding-right: 10px;
+		gap: 10px;
+	}
+
+	.chip img{
+		height: 1.25rem;
+		width: 1.25rem;
+	}
+
+	.chip p{
+		color: var(--primary_color);
+		font-family: Mada_Regular;
+		font-size: 1rem;
+		margin: 0;
+	}
+
+	@media (max-width: 768px) {
+
+		.chip{
+			border: 1.25px solid var(--primary_color);
+		}
+
+	}
+	
+</style>

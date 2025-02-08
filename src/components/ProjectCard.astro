@@ -1,0 +1,282 @@
+---
+import Button from '../components/Button.astro'
+import Chip from '../components/Chip.astro'
+
+import downloads from '../assets/downloads.svg';
+
+import icon_play_store from '../assets/play_store.svg';
+import icon_github from '../assets/github.svg'
+import icon_source_forge from '../assets/source_forge.svg'
+import icon_web from '../assets/web.svg'
+
+interface Props {
+	baseid: String;
+	title: String;
+	img: string;
+	descrip: String;
+	n_downloads: String;
+	updated: String;
+	released: String;
+	play_store: String;
+	github: String;
+	web: String;
+	source_forge: String;
+	technologies: String[];
+	screenshots: string[];
+	is_landscape: Boolean;
+}
+
+const {baseid, title, img, descrip, n_downloads, updated, released, play_store, github, source_forge, web, technologies, screenshots, is_landscape} = Astro.props;
+---
+<div id="main_card">
+
+	<div id="preview">
+		<div id="preview_left">
+			<img src={img} alt="">
+			<div id={`${baseid}-downloads`} class="downloads_count">
+				<img src={downloads.src} alt="" >
+				<p>{n_downloads}</p>
+			</div>
+		</div>
+		<div id="preview_right">
+			<h3 class="title">{title}</h3>
+			<p class="text">{descrip}</p>
+			<p id={`${baseid}-show_more`} class="text text_show_more"}>Show more</p>
+		</div>
+		
+	</div>
+
+	<div id={`${baseid}-detail_content`} class="detail_content">
+
+		<div id={`${baseid}-grid_details`} class="grid_details">
+
+			<p class={`detail ${baseid}-updated text`}>Updated on:</p>
+			<p class={`${baseid}-updated text`}>{updated}</p>
+
+			<p class={`detail ${baseid}-released text`}>Released on:</p>
+			<p class={`${baseid}-released text`}>{released}</p>
+
+			<p class="detail text">Available in:</p>
+			
+			<div class="chip_container">
+				<div id={`${baseid}-play_store`}><Button text={"Play Store"} icon={icon_play_store.src} href={play_store}/></div>
+				<div id={`${baseid}-github`}><Button text={"Repository"} icon={icon_github.src} href={github}/></div>
+				<div id={`${baseid}-source_forge`}><Button text={"SourceForge"} icon={icon_source_forge.src} href={source_forge}/></div>
+				<div id={`${baseid}-web`}><Button text={"Web"} icon={icon_web.src} href={web}/></div>
+			</div>
+
+			<p class="detail text">Technologies:</p>
+			<div class="chip_container">
+				{technologies.map((technology) => (
+					<Chip img="" text={technology} />
+			  	))}
+			</div>
+
+		</div>
+
+		<div id="screenshot_container">
+
+			{screenshots.map((screenshot) => (
+					<img class={`${baseid}-screenshot screenshot`} src={screenshot} alt="">
+			  	))}
+
+		</div>
+
+		<p id={`${baseid}-show_less`} class="text text_show_less">Show less</p>
+	</div>
+	
+</div>
+
+<script define:vars={{baseid, n_downloads, updated, released, play_store, github, source_forge, web, is_landscape}}>
+
+
+	
+	document.addEventListener("DOMContentLoaded", () => {
+
+		const show_more = document.getElementById(`${baseid}-show_more`);
+		const show_less = document.getElementById(`${baseid}-show_less`);
+		const detail_content = document.getElementById(`${baseid}-detail_content`);
+		
+		console.log(baseid);
+
+		show_more?.addEventListener("click", () => {
+				
+				show_more.style.maxWidth = "0";
+				
+				detail_content.style.maxHeight = "800px";
+				detail_content.style.opacity = "1";
+			});
+
+		show_less?.addEventListener("click", () => {
+				
+				detail_content.style.maxHeight = "0";
+				detail_content.style.opacity = "0";
+			});
+
+		detail_content.addEventListener("transitionend", () => {
+
+			if(detail_content.style.maxHeight === "0px"){
+				show_more.style.maxWidth = "100%";
+			}
+		});
+
+
+		const hideIfEmpty = (id, value) => {
+            if (value === "") {
+                document.getElementById(id)?.style.setProperty("display", "none");
+            }
+        };
+
+
+        const hideAllIfEmpty = (className, value) => {
+            if (value === "") {
+                document.querySelectorAll(`.${className}`).forEach(item => item.setAttribute("style", "display: none;"));
+            }
+        };
+
+
+        hideIfEmpty(`${baseid}-downloads`, n_downloads);
+        hideIfEmpty(`${baseid}-play_store`, play_store);
+        hideIfEmpty(`${baseid}-github`, github);
+        hideIfEmpty(`${baseid}-source_forge`, source_forge);
+        hideIfEmpty(`${baseid}-web`, web);
+
+		//////
+
+		hideAllIfEmpty(`${baseid}-updated`, updated);
+        hideAllIfEmpty(`${baseid}-released`, released);
+
+		
+        if(is_landscape){
+        	const img_landscape = document.querySelectorAll(`.${baseid}-screenshot`);
+        	img_landscape.forEach(it => it.style.maxWidth = "90%")
+        }
+		
+	});
+
+</script>
+
+<style>
+
+	#main_card{
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+
+	#preview{
+		display: flex;
+		flex-direction: row;
+		gap: 15px;
+	}
+
+	#screenshot_container{
+		display: flex;
+		overflow-x: auto;
+		gap: 1rem;
+		padding-bottom: 0.5rem;
+		margin-top: 2rem;
+		min-width: 0;
+	}
+
+	.screenshot{
+		flex: 0 0 auto;
+  		max-width: 25%;
+		border-radius: 0;
+	}
+
+	.title{
+		color: var(--primary_color);
+		font-family: Mada_Regular;
+		font-size: 1.25rem;
+		margin: 0;
+		text-align: start;
+	}
+
+	.downloads_count{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		align-items: flex-end;
+		gap: 3px;
+		justify-content: center;
+		margin-top: 8px;
+		margin-bottom: 20px;
+	}
+
+	.text{
+		color: var(--text_color);
+		font-size: 1rem;
+	}
+
+	.detail_content{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		max-height: 0;
+		opacity: 0;
+		overflow: hidden;
+		transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+	}
+
+	.grid_details{
+		display: grid;
+		grid-template-columns: 2fr 6fr;
+		gap: 30px 10px;
+	}
+
+	.text_show_more{
+		display: inline-block;
+		max-width: 100%;
+		margin-top: 10px;
+		width: auto;
+		color: var(--subtext_color);
+		text-decoration: underline;
+		cursor: pointer;
+		overflow: hidden;
+		white-space: nowrap;
+
+		transition: max-width 0.2s ease-in-out;
+	}
+
+	.text_show_less{
+		display: inline;
+		margin-top: 10px;
+		width: auto;
+		color: var(--subtext_color);
+		text-decoration: underline;
+		cursor: pointer;
+		margin-top: 20px;
+	}
+
+
+	.detail{
+		color: var(--subtext_color);
+		font-family: Mada_Regular;
+	}
+
+	p{
+		color: var(--text_color);
+		font-family: Mada_Regular;
+		font-size: 1rem;
+		margin: 0;
+		text-align: start;
+	}
+
+	img{
+		border-radius: 15px;
+	}
+
+
+	@media (max-width: 768px) {
+
+		#store_container{
+			gap: 1.25rem;
+		}
+
+		.screenshot{
+	  		max-width: 50%;
+		}
+
+	}
+
+</style>
