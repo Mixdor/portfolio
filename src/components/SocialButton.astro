@@ -1,12 +1,13 @@
 ---
 interface Props {
 	link: string;
+	label: string;
 }
 
-const {link} = Astro.props;
+const {link, label} = Astro.props;
 ---
 
-<a type="button" class="simple_button" href={link} target="_blank">
+<a type="button" class="simple_button" aria-label={label} href={link} target="_blank">
 	<slot/>
 </a>
 
