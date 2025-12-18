@@ -4,10 +4,16 @@ import ProjectCard from '../components/ProjectCard.astro';
 import circle from '../assets/icons/circle.svg';
 
 import logo_terminal_unlock from '../assets/logos/logo_terminal_unlock.svg';
+import logo_chronsey from '../assets/logos/logo_chronsey.svg';
 import logo_skin_cs2 from '../assets/logos/logo_skin_cs2.svg';
 import logo_devknow from '../assets/logos/logo_devknow.svg';
 import logo_sensehub from '../assets/logos/logo_sensehub.svg';
 import logo_circuitikz_gen from '../assets/logos/logo_circuitikz_gen.svg';
+
+import chronsey1 from '../assets/screenshot/chronsey1.webp'
+import chronsey2 from '../assets/screenshot/chronsey2.webp'
+import chronsey3 from '../assets/screenshot/chronsey3.webp'
+import chronsey4 from '../assets/screenshot/chronsey4.webp'
 
 import terminal1 from '../assets/screenshot/terminal1.webp'
 import terminal2 from '../assets/screenshot/terminal2.webp'
@@ -66,14 +72,31 @@ import circuitikz4 from '../assets/screenshot/circuitikz4.webp'
 			img={logo_terminal_unlock.src} 
 			descrip="Fallout Terminal Unlock is a mobile app designed to streamline the terminal hacking puzzles in the Fallout series by providing real-time solutions based on selected difficulty levels and featuring customizable themes to enhance user experience. In addition to simplifying the challenge of trial-and-error hacking, the app includes detailed in-game maps that pinpoint terminal locations, allowing players to navigate the expansive Fallout universe more efficiently."
 			n_downloads="+15K"
-			updated="Feb 21, 2025"
+			updated="Dec 16, 2025"
 			released="Jun 16, 2023"
 			play_store="https://play.google.com/store/apps/details?id=com.silentbit.terminalunlock"
 			github=""
 			source_forge=""
 			web=""
-			technologies={["Kotlin", "Groovy", "Glide", "XML", "UI Advanced"]}
+			technologies={["Kotlin", "Groovy", "Glide", "XML", "Compose", "UI Advanced"]}
 			screenshots={[terminal1.src, terminal2.src, terminal3.src, terminal4.src]}
+			is_landscape={false}
+		/>
+
+		<ProjectCard
+			baseid="chronsey"
+			title="Flags of the world"
+			img={logo_chronsey.src}
+			descrip="Flags of the World is an interactive app for learning geography in a fun way. Discover countries, flags, maps, and capitals through dynamic games and quizzes designed for all levels. Ideal for students, travelers, and trivia lovers, the app lets you progress at your own pace as you play, overcome challenges, and improve your knowledge step by step."
+			n_downloads="+100"
+			updated="Nov 30, 2025"
+			released="Sep 28, 2025"
+			play_store="https://play.google.com/store/apps/details?id=com.silentbit.chronsey"
+			github=""
+			source_forge=""
+			web=""
+			technologies={["Kotlin", "Kotlin DSL", "Coil", "Compose", "Lottie", "Room", "DaggerHilt", "Firabese", "Crypto"]}
+			screenshots={[chronsey1.src, chronsey2.src, chronsey3.src, chronsey4.src]}
 			is_landscape={false}
 		/>
 
@@ -82,8 +105,8 @@ import circuitikz4 from '../assets/screenshot/circuitikz4.webp'
 			title="SkinViewer for CS2"
 			img={logo_skin_cs2.src} 
 			descrip="SkinViewer for CS2 is a comprehensive mobile application designed to empower Counter-Strike players and skin collectors with all the detailed information they need about CS2 skins. The app offers an intuitive interface to explore a wide range of weapon skins—complete with stunning visuals and extensive details—while allowing users to filter options by type, rarity, price, and more. With real-time data integration, users can effortlessly check current Steam market prices as well as prices from third-party sources, ensuring they stay informed about market trends."
-			n_downloads="+150"
-			updated="Mar 3, 2025"
+			n_downloads="+500"
+			updated="Oct 27, 2025"
 			released="Dec 8, 2024"
 			play_store="https://play.google.com/store/apps/details?id=com.silentbit.skinviewerforcs2"
 			github=""
@@ -100,7 +123,7 @@ import circuitikz4 from '../assets/screenshot/circuitikz4.webp'
 			img={logo_devknow.src} 
 			descrip="DevKnow is your essential companion for mastering programming, offering a comprehensive library of documentation, guides, and resources across various programming topics, languages, and tools—all designed to enhance your coding skills and productivity. With its intuitive interface and selective download system, you can easily access the latest updates on your favorite technologies, even offline, whether you're refining your web development expertise or mastering the Linux console with our detailed Bash guide."
 			n_downloads="+50"
-			updated="Jun 18, 2024"
+			updated="Jun 19, 2025"
 			released="Apr 28, 2024"
 			play_store="https://play.google.com/store/apps/details?id=com.silentbit.devknow"
 			github=""
